@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import profilePicture from './img/no-profile-picture.svg';
 
 function formatDate(date) {
   var hours = date.getHours();
@@ -32,19 +33,37 @@ function App() {
   }, 2000);
 
   return (
-    <div>
-      <h1>List of present students</h1>
-      <h2>Number of present students: {students.length}</h2>
-      <br></br>
-      <br></br>
-      {students.map((student) => {
-        var dt = new Date(student.time);
-        return (<div key={student.rollNo}>
-          <h3>{student.rollNo + `       --       ` + student.fullName + `       --       ` + formatDate(dt)}</h3>
-          <br></br>
-        </div>
-        )
-      })}
+    <div className="attendanceList">
+      <header>
+        <h1 className="attendanceList__title">
+          <span className="attendanceList__title--top">
+            Attendance
+          </span>
+          <span className="attendanceList__title--bottom">
+            List
+          </span>
+          <span className="attendanceList__title--bottom-count">
+            Number of present students: {students.length}
+          </span>
+        </h1>
+      </header>
+
+      <main className="attendanceList__students">
+        {students.map((student) => {
+          var formattedDate = formatDate(new Date(student.time));
+          return (
+            <article key={student.rollNo} className="attendanceList__student">
+              <img src={profilePicture} className="attendanceList__picture" alt=""></img>
+              <span className="attendanceList__details">
+                {student.fullName}
+                <br></br>
+                {student.rollNo}
+              </span>
+              <span className="attendanceList__time">{formattedDate}</span>
+            </article>
+          )
+        })}
+      </main>
     </div>
   );
 }
