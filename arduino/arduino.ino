@@ -3,7 +3,8 @@
 #include <SPI.h>
 #include <MFRC522.h>
 
-#define ALERT_PIN 4
+#define LED_PIN 3
+#define BUZZER_PIN 4
 #define RST_PIN 9
 #define SS_PIN 10
  
@@ -17,8 +18,8 @@ void setup() {
 }
  
 void loop() {
-  digitalWrite(ALERT_PIN, LOW); // turn the LED off by making the voltage LOW
-  noTone(ALERT_PIN); // turn off buzzer
+  digitalWrite(LED_PIN, LOW); // turn the LED off by making the voltage LOW
+  noTone(BUZZER_PIN); // turn off buzzer
   // Reset the loop if no new card present on the sensor/reader. This saves the entire process when idle.
   if (!rfid.PICC_IsNewCardPresent())
     return;
@@ -27,8 +28,8 @@ void loop() {
   if (!rfid.PICC_ReadCardSerial())
     return;
 
-  digitalWrite(ALERT_PIN, HIGH); // turn the LED on (HIGH is the voltage level)
-  tone(ALERT_PIN, 2000); // turn the buzzer on, send sound of 2kHz
+  digitalWrite(LED_PIN, HIGH); // turn the LED on (HIGH is the voltage level)
+  tone(BUZZER_PIN, 2000); // turn the buzzer on, send sound of 2kHz
   delay(250); // LED and buzzer on for 250ms
   // Serial.print(F("RFID Tag UID:"));
   printHex(rfid.uid.uidByte, rfid.uid.size);

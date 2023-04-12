@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import profilePicture from './img/no-profile-picture.svg';
 
@@ -28,9 +28,14 @@ function App() {
       return a.rollNo.localeCompare(b.rollNo);
     }));
   }
-  setTimeout(() => {
+
+  useEffect(() => {
     fetchStudents();
-  }, 2000);
+    const interval = setInterval(() => {
+      fetchStudents();
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="attendanceList">
