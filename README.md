@@ -21,6 +21,10 @@ To get started with the project, follow these steps:
 1. Clone this repository to your local machine using Git or by downloading the ZIP file.
 2. Open the Arduino IDE and in the menu bar, go to `Sketch > Include Library > Add .ZIP Library...` to add the `/arduino/rfid-master.zip`. You can also download this library from [here](https://github.com/miguelbalboa/rfid).
 
+<p align="center">
+  <img src="./arduino/CircuitSchematic.png" alt=""/>
+</p>
+
 3. To make the Arduino connections according to the above circuit schematic, follow these steps:
     - Connect the RFID-RC522 reader's SDA pin to pin 10 on the Arduino Uno board.
     - Connect the RFID-RC522 reader's SCK pin to pin 13 on the Arduino Uno board.
