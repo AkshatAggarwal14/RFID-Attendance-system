@@ -50,7 +50,7 @@ npm install
 DB_URL=mongodb://[username:password@]host1[:port1][,...hostN[:portN]][/[defaultauthdb][?options]]
 ```
 6. Start the Node.js server by running `npm start` in the `backend/` directory of the project.
-7. Start the React frontend by running npm start in the frontend/ directory of the project.
+7. Start the React frontend by running `npm start` in the `frontend/` directory of the project.
 8. Navigate to http://localhost:3000 in your web browser to view the web interface.
 
 Note: If you encounter any errors or issues during the installation process, please consult the Troubleshooting section below.

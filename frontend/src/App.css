@@ -52,17 +52,6 @@
     opacity: 0.65;
 }
 
-
-/* .attendanceList header .attendanceList__icon {
-    fill: #fff;
-    opacity: 0.35;
-    width: 50px;
-    position: absolute;
-    top: 50%;
-    left: var(--start);
-    transform: translate(-50%, -50%);
-} */
-
 .attendanceList__students {
     background-color: #fff;
     border-radius: 0 0 12px 12px;
