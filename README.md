@@ -9,6 +9,11 @@ The system works as follows:
 2. The Arduino board communicates with a Node.js server using the serialport library. The server stores the list of present students in a MongoDB database using Mongoose.
 3. The web-based user interface is built using React. The interface displays the list of present students, which is updated in real-time as students swipe their RFID cards.
 
+<p float="left" align="center">
+  <img src="./images/Frontend1.jpg" width="49.5%" alt="Attendance list"/>
+  <img src="./images/Frontend2.jpg" width="49.5%" alt="Attendance list while hovering"/>
+</p>
+
 ## Installation
 
 To use the RFID Attendance System, you'll need to have the following software installed on your machine:
@@ -22,7 +27,7 @@ To get started with the project, follow these steps:
 2. Open the Arduino IDE and in the menu bar, go to `Sketch > Include Library > Add .ZIP Library...` to add the `/arduino/rfid-master.zip`. You can also download this library from [here](https://github.com/miguelbalboa/rfid).
 
 <p align="center">
-  <img src="./arduino/CircuitSchematic.png" alt=""/>
+  <img src="./images/CircuitSchematic.png" alt="Circuit Schematic"/>
 </p>
 
 3. To make the Arduino connections according to the above circuit schematic, follow these steps:
